@@ -169,7 +169,7 @@ nav ul li a:hover {
     text-transform: uppercase;
 }
 
-.mob-nav ul li a:hover{
+.mob-nav ul li a:hover {
     color: #000;
 }
 
@@ -598,6 +598,15 @@ form .message textarea {
     color: white;
     background-color: #F48734;
     transition: all 0.4s ease-in;
+    border: 1px solid #FA8234;
+
+}
+
+.button-area button:focus {
+    outline: none;  /* Remove default browser focus outline */
+    border: 1px solid #FA8234;  /* Same border as hover */
+    background-color: #F48734;  /* Same background as hover */
+    color: white;  /* Same color as hover */
 }
 
 /* form start and here */
@@ -663,11 +672,80 @@ ul.breadcrumb-about li a:hover {
 
 }
 
+.desk p {
+    text-align: justify;
+    color: #000000;
+    font-family: "Roboto", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2em;
+    word-spacing: 1px;
+}
+
+
+.desk h3,
+.first h3 {
+    color: #000000;
+    font-family: "Roboto", Sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.3em;
+}
+
+.line-style::after{
+    content: "";
+    background-color: #F48734;
+    width: 200px;
+    height: 2.5px;
+    display: block;
+    margin: 10px 0px 20px 0px;
+}
+
+.line-style-1::after{
+    content: "";
+    background-color: #F48734;
+    width: 90px;
+    height: 2.5px;
+    display: block;
+    margin: 10px 0px 20px 0px;
+
+}
+
+.line-style-2::after{
+    content: "";
+    background-color: #F48734;
+    width: 200px;
+    height: 2.5px;
+    display: block;
+    margin:10px auto;
+
+}
+
+
+
+
+.first p {
+    text-align: justify;
+    color: #000000;
+    font-family: "Roboto", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2em;
+}
+
+.company {
+    font-size: 18px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.3em;
+}
+
 /* about us page and here */
 
 
 /* catalogue page start  here */
- .catalgue{
+.catalgue {
     display: flex;
     align-items: center;
     justify-content: start;
@@ -675,35 +753,35 @@ ul.breadcrumb-about li a:hover {
 }
 
 
-.cat-img{
+.cat-img {
     width: calc(100% / 3);
 }
 
-.cat-img img{
+.cat-img img {
     width: 100%;
 }
 
 
-.catalgue .cat-img .cat-name{
+.catalgue .cat-img .cat-name {
     text-align: center;
 }
 
-.cat-name p{
+.cat-name p {
     text-align: center;
     color: #000000;
     font-size: 16px;
     font-weight: 400;
     line-height: 2em;
     letter-spacing: .3px;
-} 
+}
 
-.cat-name button a{
+.cat-name button a {
     outline: none;
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
 
-.cat-name button{
+.cat-name button {
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -737,60 +815,65 @@ ul.breadcrumb-about li a:hover {
 
 /* footer section start here */
 
-.footer_upper_conatiner{
+.footer_upper_conatiner {
     background-color: #202020;
-    padding-top: 80px; 
+    padding-top: 80px;
     padding-bottom: 30px;
 }
 
-.f_logo-box img{
+.f_logo-box img {
     width: 60%;
     max-width: 60%;
 }
-.f_logo_text{
+
+.f_logo_text {
     color: white;
     line-height: 27px;
     font-size: 14px;
     margin-top: 20px;
 }
-.f_social_box{
+
+.f_social_box {
     display: flex;
     gap: 5%;
- 
+
 }
-.f_social_icon{
+
+.f_social_icon {
     aspect-ratio: 1/1;
     color: white;
     border: 1px solid white;
     border-radius: 50%;
-    width:30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-footer p{
+
+footer p {
     margin-bottom: 30px;
 }
 
-.fs_heading{
+.fs_heading {
     font-size: 16px;
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
 }
-.fs_heading::before{
+
+.fs_heading::before {
     width: 40px;
     height: 2px;
     content: "";
     position: absolute !important;
-    top:45px;
+    top: 45px;
     z-index: 0;
     margin: auto;
     background: #ce9e51;
     opacity: 0.8;
 }
 
-.f_menu{
+.f_menu {
     list-style: none;
     color: white;
     margin-top: 35px;
@@ -799,31 +882,31 @@ footer p{
 
 }
 
-.f_menu li p{
+.f_menu li p {
     line-height: 27px;
 
 }
 
-.f_menu li{
-    padding-top:15px;
+.f_menu li {
+    padding-top: 15px;
 
 }
 
-.f_menu li a{
+.f_menu li a {
     color: #ffffff;
     text-decoration: none;
 }
 
-.f_menu li a:hover{
+.f_menu li a:hover {
     opacity: 0.8;
 }
 
 
-.f_button{
+.f_button {
     width: 100%;
-    padding:10px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
     background-color: #ff7c33;
-    font-size:15px;
+    font-size: 15px;
     font-weight: 500;
     color: white;
     border-radius: 20px;
@@ -832,14 +915,14 @@ footer p{
     cursor: pointer;
 }
 
-.footer_bottom_conatiner{
+.footer_bottom_conatiner {
     background-color: #0c0c0c;
     padding: 30px 0 40px 0;
     font-size: 14px;
 }
 
 
-.scroll-to-top{
+.scroll-to-top {
     background-color: #ff7c33;
     position: fixed;
     bottom: 30px;
@@ -849,15 +932,15 @@ footer p{
     padding: 13.5px 20px;
     display: none;
     cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
-    transition: 0.3s ease-in-out; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
 }
 
 /* Hover effect */
 
 .scroll-to-top:hover {
     background-color: #ff6b1b;
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 
@@ -1010,19 +1093,27 @@ footer p{
         padding: 60px 0px 0px 0px !important;
     }
 
-    .cat-img{
+    .cat-img {
         width: calc(100% / 1);
     }
 
     .footer_upper_conatiner {
         padding-top: 30px;
     }
-    .copyright{
+
+    .copyright {
         text-align: center;
     }
 
-
+    .desk h3,
+    .first h3 {
+        font-size: 20px;
+        line-height: 32px;
+    }
 }
+
+
+
 
 @media (min-width: 776px) {
     .d-show {
@@ -1049,7 +1140,8 @@ footer p{
     .client-logo {
         width: calc(100% / 5);
     }
-    .cat-img{
+
+    .cat-img {
         width: calc(100% / 2);
     }
 
@@ -1067,5 +1159,5 @@ footer p{
 
     }
 
-    
+
 }

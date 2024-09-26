@@ -3,6 +3,28 @@ let light = document.querySelectorAll(".text-light");
 let el = light[3];
 el.setAttribute("class", "text-light copyright");
 
+let desk = document.querySelectorAll(".desk h3");
+//console.log(desk);
+
+if (desk.length > 0) {
+  desk[0].classList.add("line-style-2");
+}
+
+if (desk.length > 1) {
+  desk[1].classList.add("line-style");
+}
+
+if (desk.length > 2) {
+  desk[2].classList.add("line-style-1");
+}
+
+let deskOne = document.querySelectorAll(".first h3");
+// console.log(desk);
+
+deskOne.forEach((el) => {
+  el.classList.add("line-style-1");
+});
+
 let topScroll = document.querySelector(".scroll-to-top");
 // console.log(topScroll);
 
@@ -43,7 +65,6 @@ tl5.from(
 );
 // footer end
 
-
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: "#trigger",
@@ -68,7 +89,7 @@ let tl2 = gsap.timeline({
     scroller: "body",
     start: "top center",
     end: "bottom center",
-    once: true, 
+    once: true,
   },
 });
 
@@ -89,7 +110,7 @@ let tl3 = gsap.timeline({
     scroller: "body",
     start: "top center",
     end: "bottom center",
-    once: true, 
+    once: true,
   },
 });
 
@@ -125,26 +146,94 @@ tl4.from(
   }
 );
 
-
 // about
 let tl6 = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#trigger-about",
-      scroller: "body",
-      start: "top center",
-      end: "bottom center",
-      once: true,
-    },
+  scrollTrigger: {
+    trigger: "#trigger-about",
+    scroller: "body",
+    start: "top center",
+    end: "bottom center",
+    once: true,
+  },
+});
+
+tl6.from("#trigger-about h3", {
+  y: 300,
+  duration: 2,
+  opacity: 0,
+  delay: 0,
+  stagger: 0.15,
+  ease: "power2.out",
+});
+
+// form validation
+
+let buttonForm = document.querySelector(".button-area button");
+
+buttonForm.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Retrieve form values
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let subject = document.getElementById("subject").value;
+
+  // Regular expression patterns
+  const namePattern = /^[A-Za-z0-9\s]{3,20}$/;
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const phonePattern = /^[6-9][\d]{9}$/;
+  const subjectPattern = /^[a-zA-Z0-9\s.,!?'-]{3,100}$/;
+
+  // Clear previous error messages
+  let error = document.querySelectorAll(".error");
+  error.forEach((element) => {
+    element.innerText = "";    
   });
-  
-  tl6.from(
-    "#trigger-about .first_h4 P, #trigger-about h2, #trigger-about h3",
-    {
-      y: 300,
-      duration: 2,
-      opacity: 0,
-      delay: 0,
-      stagger: 0.15,
-      ease: "power2.out",
-    }
-  );
+
+  // document.getElementById("nameError").innerText = "";
+  // document.getElementById("emailError").innerText = "";
+  // document.getElementById("telError").innerText = "";
+  // document.getElementById("subjectError").innerText = "";
+
+  let isValid = true;
+
+  // Name validation
+  if (!namePattern.test(name)) {
+    document.getElementById("nameError").innerText =
+      "Please enter a valid name (3 to 20 characters *";
+    isValid = false;
+  }
+
+  // Email validation
+  if (!emailPattern.test(email)) {
+    document.getElementById("emailError").innerText =
+      "Please enter a valid email *";
+    isValid = false;
+  }
+
+  // Phone validation
+  if (!phonePattern.test(phone)) {
+    document.getElementById("telError").innerText =
+      "Phone number must start with 6-9 and be 10 digits long *";
+    isValid = false;
+  }
+
+  // Subject validation
+  if (!subjectPattern.test(subject)) {
+    document.getElementById("subjectError").innerText =
+      "Subject must be 3 to 100 characters long *";
+    isValid = false;
+  }
+
+  // Final form validation status
+
+  if (isValid) {
+    let formClass = document.getElementsByClassName("form-controll");
+    Array.from(formClass).forEach((el) => {
+      el.value = "";
+    });
+
+    alert("Form submitted successfully!");
+  }
+});
